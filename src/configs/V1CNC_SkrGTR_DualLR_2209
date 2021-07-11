@@ -13,6 +13,7 @@ $CFGDIR/accessories/dummy-extruder
 $CFGDIR/accessories/tmc2209
 $CFGDIR/accessories/reprap_discount_full_graphic_lcd
 $CFGDIR/accessories/dual-drivers-on-yz
+$CFGDIR/accessories/tmc2209_sensorless_homing
 $CFGDIR/accessories/laser-32bit
 $CFGDIR/boards/skr_gtr_dual
 

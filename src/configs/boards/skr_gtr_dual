@@ -1,4 +1,5 @@
 opt_set DEFAULT_AXIS_STEPS_PER_UNIT "{ 100, 100, 400 }"
+opt_set Z_MIN_ENDSTOP_INVERTING "false"
 
 # Write some useful tidbits to the readme.
 echo "- Configured for Skr GTR v1.0 dual" >> README.md
