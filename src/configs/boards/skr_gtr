@@ -1,0 +1,22 @@
+
+opt_set MOTHERBOARD "BOARD_BTT_GTR_V1_0"
+
+opt_set SERIAL_PORT 1
+opt_set SERIAL_PORT_2 -1
+
+opt_set DEFAULT_AXIS_STEPS_PER_UNIT "{ 100, 100, 400, 100 }"
+
+# Need to disable FAN2_PIN, but can't yet, so...
+sed --in-place=bak '/FAN2_PIN/d' Marlin/src/pins/stm32f4/pins_BTT_GTR_V1_0.h
+
+opt_add SPINDLE_LASER_ENA_PIN PB0   // Heater2
+opt_add SPINDLE_LASER_PWM_PIN PC8
+
+opt_enable HOST_ACTION_COMMANDS
+
+pushd Marlin/src/HAL
+rm -rf AVR DUE ESP32 LINUX LPC1768 SAMD51 TEENSY*
+popd
+
+# Write some useful tidbits to the readme.
+echo "- Configured for Skr GTR v1.0" >> README.md
